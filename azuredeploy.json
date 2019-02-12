@@ -8,7 +8,7 @@
 				"description": "Base URL for Template Files",
 				"artifactsBaseUrl": ""
 			},
-			"defaultValue": "https://raw.githubusercontent.com/Microsoft/openshift-container-platform/master"
+			"defaultValue": "https://raw.githubusercontent.com/davidpascual/openshift-container-platform/master"
 		},
 		"masterVmSize": {
 			"type": "string",
@@ -641,7 +641,7 @@
 		"infraLbBackendPoolId": "[concat(variables('infraLbId'),'/backendAddressPools/loadBalancerBackend')]",
 		"infraLbHttpProbeId": "[concat(variables('infraLbId'),'/probes/httpProbe')]",
 		"infraLbHttpsProbeId": "[concat(variables('infraLbId'),'/probes/httpsProbe')]",
-		
+
 		"privateMasterFrontEndIpConfigurationProperties": {
 			"privateIPAddress": "[parameters('masterPrivateClusterIp')]",
 			"privateIPAllocationMethod": "Static",
@@ -671,7 +671,7 @@
 		"imageReference": {
 			"publisher": "RedHat",
 			"offer": "RHEL",
-			"sku": "7.5",
+			"sku": "7.6",
 			"version": "latest"
 		},
 		"marketplacePlan":{
@@ -681,7 +681,7 @@
 		},
 		"redHatTags": {
 			"app": "OpenShiftContainerPlatform",
-			"version": "3.10",
+			"version": "3.11",
 			"platform": "AzurePublic",
 			"provider": "9d2c71fc-96ba-4b4a-93b3-14def5bc96fc"
 		},
@@ -2455,7 +2455,7 @@
 					]
 				},
 				"protectedSettings": {
-					"commandToExecute": "[concat('bash ', variables('nodePrepScriptFileName'), ' ', parameters('rhsmUsernameOrOrgId'), ' ', variables('singlequote'), parameters('rhsmPasswordOrActivationKey'), variables('singlequote'), ' ', parameters('rhsmBrokerPoolId'), ' ', variables('singlequote'), parameters('proxySettings'), variables('singlequote'), ' ', variables('singlequote'), parameters('httpProxyEntry'), variables('singlequote'), ' ', variables('singlequote'), parameters('httpsProxyEntry'), variables('singlequote'), ' ', variables('singlequote'), parameters('noProxyEntry'), variables('singlequote'))]"	
+					"commandToExecute": "[concat('bash ', variables('nodePrepScriptFileName'), ' ', parameters('rhsmUsernameOrOrgId'), ' ', variables('singlequote'), parameters('rhsmPasswordOrActivationKey'), variables('singlequote'), ' ', parameters('rhsmBrokerPoolId'), ' ', variables('singlequote'), parameters('proxySettings'), variables('singlequote'), ' ', variables('singlequote'), parameters('httpProxyEntry'), variables('singlequote'), ' ', variables('singlequote'), parameters('httpsProxyEntry'), variables('singlequote'), ' ', variables('singlequote'), parameters('noProxyEntry'), variables('singlequote'))]"
 				}
 			}
 		}, {

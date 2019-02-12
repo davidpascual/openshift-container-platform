@@ -95,7 +95,7 @@ subscription-manager repos \
 
 # Update system to latest packages
 echo $(date) " - Update system to latest packages"
-yum -y update --releasever=7.5 --exclude=WALinuxAgent
+yum -y update --releasever=7.6 --exclude=WALinuxAgent
 echo $(date) " - System update complete"
 
 # Install base packages and update system to latest packages
@@ -131,7 +131,11 @@ echo $(date) " - Updating ansible.cfg file"
 wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 5 https://raw.githubusercontent.com/microsoft/openshift-container-platform-playbooks/master/updateansiblecfg.yaml
 ansible-playbook -f 10 ./updateansiblecfg.yaml
 
-# Create certificate files 
+# Get "deployOpenShift.sh"
+echo $(date) " - Downloading deployOpenShift.sh file"
+wget --retry-connrefused --waitretry=1 --read-timeout=20 --timeout=15 -t 5 https://raw.githubusercontent.com/davidpascual/openshift-container-platform/master/scripts/deployOpenShift.sh
+
+# Create certificate files
 
 if [[ $CUSTOMMASTERCERTTYPE == "custom" ]]
 then
@@ -152,4 +156,3 @@ then
 fi
 
 echo $(date) " - Script Complete"
-

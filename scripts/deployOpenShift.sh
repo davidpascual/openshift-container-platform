@@ -181,7 +181,7 @@ do
 $MASTER-$c openshift_hostname=$MASTER-$c openshift_node_group_name='node-config-master'"
 done
 
-# Create Infra nodes grouping 
+# Create Infra nodes grouping
 echo $(date) " - Creating Infra nodes grouping"
 for (( c=0; c<$INFRACOUNT; c++ ))
 do
